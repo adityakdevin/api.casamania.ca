@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @OA\Info(
+ * title="My the best API",
+ * version="1.0.0"
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
