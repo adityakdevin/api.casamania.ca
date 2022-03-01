@@ -436,6 +436,13 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <th scope="row">1</th>
+                            <td class="text-success fw-bold">POST</td>
+                            <td>User's Register API</td>
+                            <td><a href="https://api.casamania.ca/api/user/register"
+                                    target="_blank">https://api.casamania.ca/api/user/register</a></td>
+                        </tr>
+                        <tr>
                             <th scope="row">2</th>
                             <td class="text-success fw-bold">POST</td>
                             <td>User's Login API</td>

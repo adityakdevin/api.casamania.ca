@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('user')->group(function () {
-    // Route::post('/register', [Api\UserController::class, 'register']);
+    Route::post('/register', [Api\UserController::class, 'register']);
     Route::post('/login', [Api\UserController::class, 'login']);
 
     Route::post('authorize', [
