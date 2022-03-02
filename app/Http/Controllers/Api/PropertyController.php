@@ -160,7 +160,7 @@ class PropertyController extends AppBaseController
             )
             ->orderby('id', 'DESC')
             // ->toSql();
-            ->paginate('15')->withQueryString();
+            ->paginate('12')->withQueryString();
 
         // $response = $request->all();
         return $this->sendResponse($msg, $response);
@@ -183,7 +183,7 @@ class PropertyController extends AppBaseController
                 'Bath_tot',
                 'Br',
                 'Br_plus'
-            )->paginate('15')->withQueryString();
+            )->paginate('12')->withQueryString();
         return $this->sendResponse($msg, $response);
     }
 }
