@@ -13,7 +13,7 @@ class PropertyController extends AppBaseController
     {
         $Ml_num = $request->mls_id;
         $msg = 'Property details fetched successfully.';
-        $response = Property::with(['images', 'image'])->where(['Ml_num' => $Ml_num])->orderby('id', 'DESC')->get();
+        $response = Property::with('images', 'image')->where(['Ml_num' => $Ml_num])->orderby('id', 'DESC')->get();
         return $this->sendResponse($msg, $response);
     }
 
