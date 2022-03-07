@@ -13,7 +13,18 @@ class PropertyController extends AppBaseController
     {
         $Ml_num = $request->mls_id;
         $msg = 'Property details fetched successfully.';
-        $response = Property::with(['images', 'image'])->where(['Ml_num' => $Ml_num])->orderby('id', 'DESC')->get();
+        $response = Property::with('images', 'image')->where(['Ml_num' => $Ml_num])->orderby('id', 'DESC')->get();
+        return $this->sendResponse($msg, $response);
+    }
+
+    // Array of MLS_id
+    public function getDetailsofMultipleMLS_ID(Request $request)
+    {
+        $Ml_num = $request->mls_id;
+        $Ml_num = explode(',', $Ml_num);
+        // dd($Ml_num);
+        $msg = 'Property details fetched successfully11111.';
+        $response = Property::with('images', 'image')->whereIn('Ml_num', $Ml_num)->orderby('id', 'DESC')->get();
         return $this->sendResponse($msg, $response);
     }
 

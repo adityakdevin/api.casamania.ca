@@ -33,7 +33,8 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'property'], function ()
     Route::get('/', function () {
         return "Get Property...";
     });
-    Route::get('/{mls_id}', [Api\PropertyController::class, 'getDetails']);
+    Route::get('/mls_id/{mls_id}', [Api\PropertyController::class, 'getDetails']);
+    Route::get('/get-featured-listings-mls', [Api\PropertyController::class, 'getDetailsofMultipleMLS_ID']);
     Route::post('/filter', [Api\PropertyController::class, 'filter']);
     Route::get('/property_type/{type}', [Api\PropertyController::class, 'type']);
 });
