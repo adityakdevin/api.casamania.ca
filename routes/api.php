@@ -37,4 +37,5 @@ Route::group(['middleware' => ['auth:api'], 'prefix' => 'property'], function ()
     Route::get('/get-featured-listings-mls', [Api\PropertyController::class, 'getDetailsofMultipleMLS_ID']);
     Route::post('/filter', [Api\PropertyController::class, 'filter']);
     Route::get('/property_type/{type}', [Api\PropertyController::class, 'type']);
+    Route::get('/compressed/property', [Api\PropertyController::class, 'compressed_type']);
 });

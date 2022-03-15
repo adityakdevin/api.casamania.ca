@@ -23,7 +23,7 @@ class PropertyController extends AppBaseController
         $Ml_num = $request->mls_id;
         $Ml_num = explode(',', $Ml_num);
         // dd($Ml_num);
-        $msg = 'Property details fetched successfully11111.';
+        $msg = 'Property details fetched successfully.';
         $response = Property::with('images', 'image')->whereIn('Ml_num', $Ml_num)->orderby('id', 'DESC')->get();
         return $this->sendResponse($msg, $response);
     }
@@ -181,20 +181,24 @@ class PropertyController extends AppBaseController
     {
         $type = $request->type;
         $msg = 'Property details fetched successfully.';
-        $response = Property::with('image')->where(['property_type' => $type])
-            ->select(
-                'id',
-                'Ml_num',
-                'Addr',
-                'Ad_text',
-                'S_r',
-                'Lp_dol',
-                'Rltr',
-                'updated_at',
-                'Bath_tot',
-                'Br',
-                'Br_plus'
-            )->paginate('12')->withQueryString();
+        $response = Property::with('image')->where(['property_type' => $type])->paginate('12');
+        return $this->sendResponse($msg, $response);
+    }
+
+    public function compressed_type(Request $request)
+    {
+        $msg = 'Property details fetched successfully.';
+        $response = Property::with('image')->select(
+            'id',
+            'Ml_num',
+            'Dba',
+            'Addr',
+            'Ad_text',
+            'S_r',
+            'Lp_dol',
+            'Rltr',
+            'property_type'
+        )->paginate('12')->withQueryString();
         return $this->sendResponse($msg, $response);
     }
 }
