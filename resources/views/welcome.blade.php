@@ -476,7 +476,7 @@
                             <th scope="row">6</th>
                             <td class="text-success fw-bold">GET</td>
                             <td>Find the compressed data of properties</td>
-                            <td><a href="https://api.casamania.ca/api/property/property_type/type"
+                            <td><a href="https://api.casamania.ca/api/property/compressed"
                                     target="_blank">https://api.casamania.ca/api/property/compressed</a></td>
                         </tr>
                     </tbody>
