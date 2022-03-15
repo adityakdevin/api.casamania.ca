@@ -472,6 +472,13 @@
                             <td><a href="https://api.casamania.ca/api/property/property_type/type"
                                     target="_blank">https://api.casamania.ca/api/property/property_type/type</a></td>
                         </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td class="text-success fw-bold">GET</td>
+                            <td>Find the compressed data of properties</td>
+                            <td><a href="https://api.casamania.ca/api/property/property_type/type"
+                                    target="_blank">https://api.casamania.ca/api/property/compressed</a></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
